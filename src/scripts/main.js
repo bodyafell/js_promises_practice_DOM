@@ -54,7 +54,6 @@ const successHandler = (message) => {
 
 const errorHandler = (message) => {
   const msg = document.createElement('div');
-
   msg.setAttribute('data-qa', 'notification');
   msg.className = 'error';
   msg.textContent = message;
