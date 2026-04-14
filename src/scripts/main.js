@@ -6,7 +6,8 @@ const firstPromise = new Promise((resolve, reject) => {
   });
 
   setTimeout(() => {
-    reject(new Error('First promise was rejected'));
+    reject(new Error('First promise was rejected')); 
+    // Error must be here because i have ESLint error
   }, 3000);
 });
 
@@ -57,7 +58,7 @@ const errorHandler = (error) => {
 
   msg.setAttribute('data-qa', 'notification');
   msg.className = 'error';
-  msg.textContent = error.message;
+  msg.textContent = error && error.message ? error.message : error;
   document.body.append(msg);
 };
 
