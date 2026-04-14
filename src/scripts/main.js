@@ -52,11 +52,12 @@ const successHandler = (message) => {
   document.body.append(msg);
 };
 
-const errorHandler = (message) => {
+const errorHandler = (error) => {
   const msg = document.createElement('div');
+
   msg.setAttribute('data-qa', 'notification');
   msg.className = 'error';
-  msg.textContent = message;
+  msg.textContent = error.message;
   document.body.append(msg);
 };
 
